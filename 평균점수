@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main()
+{
+	int a,b,c,d,e;
+	scanf_s("%d", &a);
+	scanf_s("%d", &b);
+	scanf_s("%d", &c);
+	scanf_s("%d", &d);
+	scanf_s("%d", &e);
+	if (a < 40)
+	{
+		a = 40;
+	}
+	if (b < 40)
+	{
+		b = 40;
+	}
+	if (c < 40)
+	{
+		c = 40;
+	}
+	if (d < 40)
+	{
+		d = 40;
+	}
+	if (e < 40)
+	{
+		e = 40;
+	}
+	printf("%d", (a + b + c + e + d) / 5);
+  retrun 0;
+}
