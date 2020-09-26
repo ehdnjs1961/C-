@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() 
+{
+	int input,num,num2,num3,sum;
+	int count = 0;;
+	scanf_s("%d", &input);
+	num = input;
+	while (1)
+	{
+		count++;
+		if (num < 10)
+		{
+			num * 10;
+		}
+		num2 = num / 10;
+		num3 = num % 10;
+		sum = num2 + num3;
+		num = num3 *10 + sum % 10;
+		if (input == num)
+		{
+			printf("%d", count);
+			break;
+		}		
+	}
+	
+	
+	return 0;
+}
