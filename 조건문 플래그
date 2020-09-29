@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main()
+{
+	int a,flag=0;
+	printf("수입력: ");
+	scanf_s("%d", &a);
+	printf("입력한 수는 ");	
+	if (a > 100){
+		printf("100보다 큰 수이며,");
+		flag = 1;
+	}
+	if (a < -100){
+		printf("-100보다 작은 수이며,");
+		flag = 1;
+	}
+	if (a>=0){
+		if (flag == 0){
+			printf("양수이며");
+		}
+		else
+		{
+			printf("양수이고");
+		}
+
+	}
+	else
+	{
+		if (flag == 0)
+		{
+			printf("음수이며");
+		}
+		else
+		{
+			printf("음수이고");
+		}
+	}	
+	if (a % 2)
+		printf("홀수입니다 ");
+	if (a % 2 == 0)
+		printf("짝수입니다 ");	
+	return 0;
+}
