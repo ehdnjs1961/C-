@@ -1,0 +1,168 @@
+//1번문제
+#include <stdio.h>
+
+int main()
+{
+	int i;
+	scanf_s("%d", &i);
+
+	for (int a = 1; a <= i; a++)
+	{
+		printf("나는 c 프로그램이 좋다.\n");
+	}
+	return 0;
+}
+
+//2번문제
+#include <stdio.h>
+
+int main()
+{
+	int i,sum=0;
+	
+	scanf_s("%d", &i);
+
+	for (int a = 1; a <= i; a++)
+	{
+		sum = sum + a;
+	}
+	printf("결과값는 %d입니다", sum);
+	return 0;
+}
+
+//3번문제
+#include <stdio.h>
+
+int main()
+{
+	int i,sum=0;
+	scanf_s("%d", &i);
+
+	for (int a = 1; a <= i; a++)
+	{
+		if (a % 3 == 0)
+		{
+			printf("%d\n", a);
+			sum = sum + a;
+		}
+	}
+	printf("1부터 %d까지에서 3의배수의 합은 %d이다", i, sum);
+	return 0;
+}
+
+//4번문제
+#include <stdio.h>
+
+int main()
+{
+	int i;
+	
+	scanf_s("%d", &i);
+
+	for (int a = 1; a <= i; a++)
+	{
+		for (int b = 1; b <= i; b++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+	
+	return 0;
+}
+
+//5-1번문제
+#include <stdio.h>
+
+int main()
+{
+	while (1)
+	{
+		int i;
+		scanf_s("%d", &i);
+		if (i % 2 == 0)
+		{
+			printf("홀수를 입력하세요");
+		}
+		else
+		{
+			for (int a = 1; a <= i; a++)
+			{
+				for (int b = 1; b <= a; b++)
+				{
+					printf("*");
+				}
+				printf("\n");
+			}
+			break;
+		}
+	}
+	return 0;
+}
+
+//5-2번문제
+#include <stdio.h>
+
+int main()
+{
+	while (1)
+	{
+		
+		int i;
+		scanf_s("%d", &i);
+		if (i % 2 == 0)
+		{
+			printf("홀수를 입력하세요");
+		}
+		else
+		{
+
+			for (int a = 1; a <= i; a++)
+			{
+				for (int b = 1; b <= i - a + 1; b++)
+				{
+					printf("*");
+				}
+				printf("\n");
+			}
+			break;
+		}
+		}
+		
+	return 0;
+}
+
+//5-3번문제
+#include <stdio.h>
+
+int main()
+{
+	while (1)
+	{
+		int i;
+		scanf_s("%d", &i);
+		if (i % 2 == 0)
+		{
+			printf("홀수를 입력하세요");
+		}
+		else
+		{
+			i = i / 2 + 1;
+
+			for (int a = 1; a <= i; a++)
+			{
+				for (int b = 1; b <= i - a; b++)
+				{
+					printf(" ");
+				}
+				for (int b = 1; b <= 2 * a - 1; b++)
+				{
+					printf("*");
+				}
+				printf("\n");
+			}
+			break;
+		}
+	}
+	return 0;
+}
