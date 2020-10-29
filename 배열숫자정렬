@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main()
+{
+	int num;
+	int number[10] = { 0 };
+	scanf_s("%d", &num);
+	int nums[5] = { 0 };
+	
+
+	for (int i = 0; i < 5; i++)
+	{
+		nums[i] = num % 10;
+		num = num / 10;
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			if (nums[j] == i)
+			{
+				number[i]++;
+			}
+		}
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		while (number[i]>0)
+		{
+			printf("%d", i);
+			number[i]--;
+		}
+	}
+
+	return 0;
+}
