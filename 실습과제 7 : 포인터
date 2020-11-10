@@ -1,0 +1,98 @@
+//2번
+#include <stdio.h>
+
+int main()
+{
+	int num = 5;
+	int *iptr;
+	iptr = &num;
+	printf("%d",*iptr);
+	return 0;
+}
+
+//3번
+#include <stdio.h>
+
+int main()
+{
+	char ch = 'd';
+	char *cptr;
+	cptr = &ch;
+	printf("%c",*cptr);
+	return 0;
+}
+
+//4번
+#include <stdio.h>
+
+int main()
+{
+	double num1 = 5, num2 = 10;
+	double *dptr1, *dptr2;
+	dptr1 = &num1;
+	dptr2 = &num2;
+	printf("%lf", *dptr1 + *dptr2);
+	return 0;
+}
+
+//5번
+#include <stdio.h>
+
+int main()
+{
+	int num1 = 5, num2 = 10;
+	int *iptr1, *iptr2;
+	iptr1 = &num1;
+	iptr2 = &num2;
+	printf("%d", *iptr1 + *iptr2);
+	return 0;
+}
+
+//6번
+#include <stdio.h>
+
+int main()
+{
+	int num;
+	int *iptr;
+	iptr = &num;
+	*iptr = 5;
+	printf("%d", num);
+	*iptr = *iptr + 1;
+	printf("\n%d", num);
+	return 0;
+}
+
+//7번
+#include <stdio.h>
+
+int main()
+{
+	int data;
+	int *p1_data, *p2_data;
+	p1_data = &data;
+	p2_data = &data;
+	*p1_data = 10;
+	printf("%d  %d", data, *p2_data);
+	return 0;
+}
+
+
+//8, 9번
+#include <stdio.h>
+
+int main()
+{
+	int num1 = 10, num2 = 20;
+	int *ptr1, *ptr2;
+	ptr1 = &num1;
+	ptr2 = &num2;
+	*ptr1 = *ptr1 + 10; 
+	*ptr2 = *ptr2 - 10;
+	printf("%d  %d", num1, num2);
+	ptr1 = &num2;
+	ptr2 = &num1;
+	printf("\n%d   %d", *ptr1, *ptr2);
+
+	return 0;
+}
