@@ -1,0 +1,74 @@
+//2번
+#include <stdio.h>
+
+int main()
+{
+	int data[10] = {0,1,2,3,4,5,6,7,8,9};
+	int *iptr;
+	iptr = data;
+
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d ", iptr[i]);
+	}
+
+	return 0;
+}
+
+//3번
+#include <stdio.h>
+
+int main()
+{
+	int data[10];
+	int *iptr;
+	iptr = data;
+	
+	for (int i = 0; i < 10; i++)
+	{
+		scanf_s("%d", &iptr[i]);
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d ", iptr[i]);
+	}
+	return 0;
+}
+
+//4-13번
+#include <stdio.h>
+
+int main()
+{
+	double ary[] = { 170.5, 165.3, 157.2, 160.0, 165.7 };
+	double *ptr;
+	ptr = ary;
+	int size = sizeof(ary) / sizeof(ary[0]);
+
+
+	for (int i = 0; i < size; i++)
+	{
+		printf("%.1lf ", ptr[i]); // *(ptr + i)
+	}
+
+	return 0;
+}
+
+//7번
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	char *first = "GilDong";
+	char *second = "Hong";
+	char *temp;
+	printf("%s %s\n", first,second);
+	temp = first;
+	first = second;
+	second = temp;
+	printf("%s %s", first, second);
+	
+	return 0;
+}
