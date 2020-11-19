@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <string.h>
+
+int stack_count = 0;
+
+int push(int stack[], int data)
+{
+    if (stack_count < 5)
+    {
+        stack[stack_count] = data;
+        stack_count = stack_count + 1;
+        return 0;
+    }
+    else
+    {
+        printf("스택이 꽉 찼습니다");
+
+        return 0;
+    }
+}
+
+int pop(int stack[])
+{
+    if (stack_count > 0)
+    {
+        stack_count = stack_count - 1;
+        printf("%d\n", stack[stack_count]);
+
+        return 0;
+
+    }
+    else
+    {
+        printf("스택이 없어요");
+        return 0;
+    }
+}
+
+int main()
+{
+    int arr[5];
+    
+    while (1)
+    {
+        char mm[10] = {0};
+        gets(mm);
+
+        if (strcmp(mm, "push") == 0)
+        {
+            int num;
+            scanf_s("%d", &num);
+            push(arr, num);
+        }
+        else if (strcmp(mm, "pop") == 0)
+        {
+            pop(arr);
+        }
+        else if (strcmp(mm, "stop") == 0)
+        {
+            break;
+        }
+        else
+        {
+            printf("오류");
+        }
+  
+       
+    }
+
+   
+    return 0;
+}
+
