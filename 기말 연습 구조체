@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-struct  date
+struct  date //  구조체 속에 넣을 구조체
 {
 	int year;
 	int month;
@@ -16,7 +16,7 @@ struct  person  //구조체 속에 구조체(2차원 구조체)
 
 };
 
-void output_into(struct person* p, int size)
+void output_into(struct person* p, int size) //구조체값 출력 함수
 {
 
 	for (int i = 0; i < size; i++)
@@ -33,30 +33,60 @@ void output_into(struct person* p, int size)
 	}
 }
 
-void change_name(struct person* p, char *s, int size)
+void change_name(struct person* p, char *s, int size) // 원하는 이름 바꾸는 함수
 {
 
 	int check = 0;
-	int ad = 0;
+	int index = 0; // 배열 위치 확인
 	for (int i = 0; i < size; i++)
 	{
 		if (strcmp(p[i].name,s) == 0)
 		{
 			check = 1;
-			ad = i;
+			index = i;
 		}
 
 	}
 	if (check == 1)
 	{
 		printf("%s에서 바꿀이름 입력>>\n",s);
-		gets(p[ad].name);
+		gets(p[index].name);
 	}
 	else if (check == 0)
 	{
 		printf("%s 라는 이름이 없다\n",s);
 	}
 
+}
+
+void list_birthday_bymonth(struct person* p, int size) // 생일 출력 함수
+{	
+	for (int j = 1; j <= 12; j++) //월
+	{
+		int check = 0; //j월에 생일이 있는지 확인
+	    for (int i = 0; i < size; i++) //회원검색
+	    {
+		    if (check == 0) //처음
+		    {
+			    if (p[i].birthday.month == j)
+			    {
+				    check = 1;
+				    printf("%3d월 생일 : %s", j, p[i].name);
+			    }
+		    }
+		    else if (check == 1) //처음X
+		    {
+			    if (p[i].birthday.month == j)
+			    {
+				    printf(", %s", p[i].name);
+			    }
+		    }
+	   }
+	   if (check == 1)
+	   {
+			printf("\n");
+	   }
+	}	
 }
 
 int main()
@@ -69,12 +99,13 @@ int main()
 		{ .name = "박종수", .birthday = { .year = 1991, .month = 4, .day = 5 }, .score[0] = 90, .score[1] = 80, .score[2] = 85, .score[3] = 90 }
 	};
 
-	int size = sizeof(persons) / sizeof(struct person);
+	int size = sizeof(persons) / sizeof(struct person); //배열 개수 구하기
 
 
+	
 	output_into(persons, size);
-	change_name(persons, "김세영", size);
-	output_into(persons, size);
+	list_birthday_bymonth(persons, size);
+	
 
 	return 0;
 }
