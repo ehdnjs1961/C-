@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <string.h>
+
+void delete_a_char(char *s, char c)
+{
+	for (int i = 0;i < strlen(s); i++)
+	{
+		if (s[i] == c)
+		{
+			for (int j = i; j < strlen(s); j++)
+			{
+				s[j] = s[j + 1];
+			}
+			break;
+		}
+	}
+}
+
+void delete_chars(char *s, char c)
+{
+	for (int i = 0; i < strlen(s); i++)
+	{
+		if (s[i] == c)
+		{
+			for (int j = i; j < strlen(s); j++)
+			{
+				s[j] = s[j + 1];
+			}
+		}
+	}
+}
+
+int main()
+{
+	char str[80];
+	gets(str);
+
+	delete_a_char(str, 'o'); //처음으로 발견한 o삭제
+	puts(str);
+	delete_chars(str, 'g'); //모든 g삭제
+	puts(str);
+
+	return 0;
+}
